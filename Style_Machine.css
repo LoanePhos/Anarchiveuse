@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+@keyframes rotateIn {
+  0%   { transform: rotate(-10deg); opacity: 0; }
+  100% { transform: rotate(0deg);    opacity: 1; }
+}
+
 html, body {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -142,6 +147,7 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  animation: rotateIn 0.8s ease-out forwards;
 }
 
 .bloc-titre-texte { grid-column: 1 / 3; grid-row: 1; }
