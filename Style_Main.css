@@ -221,7 +221,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 .popup-box {
   display: none;
   background: #ffffff;
-  border: 3.6px dotted black;
+  box-shadow: 0px 0px 10px 10px #ffffff;
   padding: clamp(0.75rem, 2vw, 2rem);
   overflow-y: auto;
   position: fixed;
@@ -232,17 +232,17 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 .popup-box.is-open { display: block; }
 
 .popup-machine {
-  width: clamp(220px, 32vw, 500px);
-  height: clamp(200px, 60vh, 700px);
+  width: clamp(220px, 24vw, 500px);
+  height: clamp(240px, 66vh, 700px);
   top: clamp(6%, 24%, 28%);
   left: clamp(1rem, 5%, 6%);
 }
 
 .popup-mouche {
-  width: clamp(220px, 26vw, 600px);
-  height: clamp(160px, 66vh,840px);
-  top: clamp(1%, 2%, 4%);
-  right: clamp(1rem, 2%, 10%);
+  width: clamp(200px, 24vw, 550px);
+  height: clamp(240px, 76vh,840px);
+  top: clamp(4%, 2%, 4%);
+  right: clamp(2%, 4%, 6%);
 }
 
 @media (max-width: 600px) {
@@ -260,7 +260,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
     }
 
   .popup-mouche {
-    top: 8%;
+    top: 4%;
     height: auto;
     min-height: 50vh;
     }
@@ -279,7 +279,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   font-size: clamp(14px, 1.8vw, 22px);
   color: #463838;
   margin: 0;
-  -webkit-text-stroke: 0.5px #463838;  /* Légère épaisseur sur les navigateurs webkit */
+  -webkit-text-stroke: 0.5px #463838;
 }
 
 .popup-box img {
@@ -331,6 +331,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   color: #463838;
   text-decoration: none;
   background-color: #B6F772;
+  padding: 1%;
 }
 
 .popup-machine-lien {
@@ -343,16 +344,18 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   color: #463838;
   text-decoration: none;
   background-color: #B6F772;
+  padding: 1%;
 }
 
 .popup-machine-lien:hover {
   font-family: 'BianzhidaiMessy', sans-serif;
-  font-size: clamp(8px, 1vw, 12px);
+  font-size: clamp(10px, 1.4vw, 13px);
+  padding: 1%;
 }
 
 .popup-mouche-lien:hover {
   font-family: 'BianzhidaiMessy', sans-serif;
-  font-size: clamp(8px, 1vw, 12px);
+  font-size: clamp(10px, 1.4vw, 13px);
 }
 
 .popup-box strong {
@@ -361,6 +364,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   font-size: clamp(10px, 1.8vw, 16px);
   background-color: #95D8EF;
   -webkit-text-stroke: 0;
+  padding: 1%;
 }
 
 .popup-box .highlight {
