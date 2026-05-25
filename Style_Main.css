@@ -63,7 +63,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   width: clamp(350px, 64vw, 680px);
   height: 6vh;                                  
   position: fixed;
-  top: 50%;
+  top: 50dvh;
   left: 50%;   
   transform: translate(-50%, -50%);
   z-index: 999;
@@ -210,11 +210,12 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   display: none;
   background: #ffffff;
   box-shadow: 0px 0px 10px 10px #ffffff;
-  padding: clamp(0.75rem, 2vw, 2rem);
+  padding: clamp(0.75rem, 1.4vw, 1rem);
   overflow-y: auto;
   position: fixed;
   z-index: 500;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .popup-box.is-open {
@@ -344,61 +345,6 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 /* ============================================================
                           RESPONSIVE
 ============================================================ */
-
-@media (max-width: 600px) {
-  .popup-machine {
-    top: 53%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90vw !important;
-    max-height: 38vh;
-    overflow-y: auto;
-  }
-
-  .popup-mouche {
-    top: 2%;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    width: 90vw !important;
-    max-height: 50vh;
-    overflow-y: auto;
-  }
-
-  .popup-box p {
-    font-size: 8px;
-    padding: 0.5vh;
-    -webkit-text-stroke: 3px #95D8EF;
-    line-height: 1;
-  }
-
-  .popup-box img {
-    padding-bottom: 0.3vh;
-  }
-
-  .popup-machine img:first-of-type {
-    width: 25%;
-  }
-
-  .popup-mouche img:first-of-type {
-    width: calc(100% + 2 * clamp(0.75rem, 2vw, 2rem));
-  }
-
-  .popup-machine-lien,
-  .popup-mouche-lien {
-    margin: 0.3rem auto;
-    font-size: 8px;
-    padding: 0.3em 1em;
-  }
-
-  .popup-box strong {
-    font-size: 8px;
-  }
-
-  .popup-box .highlight {
-    font-size: 8px;
-  }
-}
 
 @media (max-width: 900px) {
   .grille {

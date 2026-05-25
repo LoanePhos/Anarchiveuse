@@ -264,6 +264,18 @@
     });
   </script>
 
+  <!-------------------------------------------------------------
+                        SCRIPT MOBILE         
+-------------------------------------------------------------->
+
+  <script>if (window.innerWidth <= 600) {
+    document.querySelector('[data-popup="popup-machine"]').href = 'Machine.html';
+    document.querySelector('[data-popup="popup-machine"]').removeAttribute('data-popup');
+    document.querySelector('[data-popup="popup-mouche"]').href = 'Mouche.html';
+    document.querySelector('[data-popup="popup-mouche"]').removeAttribute('data-popup');
+    }
+  </script>
+
 </body>
 
 </html>

@@ -60,11 +60,11 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   justify-content: center;
   align-items: center;
   gap: 0.8vw;
-  width: clamp(500px, 64vw, 680px);
+  width: clamp(350px, 64vw, 680px);
   height: 6vh;                                  
   position: fixed;
-  top: 8%;
-  left: 50%;    
+  top: 6dvh;
+  left: 50%;   
   transform: translate(-50%, -50%);
   z-index: 999;
   box-shadow: 0px 0px 10px 10px #ffffff;
@@ -97,18 +97,22 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 .nav-item > a::after {
   content: attr(data-text);
   font-family: 'BianzhidaiMessy', sans-serif;
-  font-size: clamp(7px, 1.8vw, 14px);    
+  font-size: clamp(7px, 1.8vw, 14px);       
   color: #463838;
   position: absolute;
-  inset: 0;                                 
+  inset: 0;                                  
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;                           
+  opacity: 0;                                 
 }
 
 .nav-item > a:hover { color: transparent; }
 .nav-item > a:hover::after { opacity: 1; }
+
+.dropdown a:hover {
+  color: #7562C7;
+}
 
 /* ============================================================
                             VIDEO
