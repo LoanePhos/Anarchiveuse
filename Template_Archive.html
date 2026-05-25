@@ -7,6 +7,7 @@
 </head>
 
 <body>
+
 <!-------------------------------------------------------------
                       TRAINEE SOURIS        
 -------------------------------------------------------------->
@@ -23,12 +24,9 @@
   let lastX = -9999, lastY = -9999;
 
   function createTrace(x, y) {
-    // Décalage aléatoire autour du point
-    const offsetX = (Math.random() - 0.5) * 40; // ±10px
-    const offsetY = (Math.random() - 0.5) * 40; // ±10px
+    const offsetX = (Math.random() - 0.5) * 40;
+    const offsetY = (Math.random() - 0.5) * 40;
     const rotation = Math.floor(Math.random() * 360);
-
-    // Alterner les images dans l'ordre
     const src = IMAGES[imageIndex % IMAGES.length];
     imageIndex++;
 
@@ -75,42 +73,42 @@
 <!-------------------------------------------------------------
                           MENU         
 -------------------------------------------------------------->
-  <header class="topnav">
-    <div class="nav-item">
-      <a href="index.html" data-text="Anarchives">Anarchives</a>
-      <a href="Machine.html" data-text="Machine" data-popup="popup-machine">Machine</a>    
-      <a href="Mouche.html" data-text="Mouche" data-popup="popup-mouche">Mouche</a>
-    </div>
-  </header>
+<header class="topnav">
+  <div class="nav-item">
+    <a href="index.html" data-text="Anarchives">Anarchives</a>
+    <a href="Machine.html" data-text="Machine">Machine</a>
+    <a href="Mouche.html" data-text="Mouche">Mouche</a>
+  </div>
+</header>
 
 <!-------------------------------------------------------------
                           VIDEO         
 -------------------------------------------------------------->
-  <div class="video-wrapper">
-    <iframe
-      class="video-frame"
-      src="https://player.vimeo.com/video/1192652286?autoplay=1&muted=1&loop=1"
-      allow="autoplay; fullscreen; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
+<div class="video-wrapper">
+  <iframe
+    class="video-frame"
+    src="https://player.vimeo.com/video/1192652286?autoplay=1&muted=1&loop=1"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
 
 <!-------------------------------------------------------------
                         INFORMATIONS         
 -------------------------------------------------------------->
-  <div class="infos">
-    <h3>Samedi 12 Septembre 2026</h3>
-    <h3>Fête de l'Humanité • Base 217, le Plessy-Paté</h3>
-    <h2>Anarchive 2605201558</h2>
-    <p>Durée d'enregistrement :<strong>00:00:45</strong></p>
-    <button>Partager</button>
-    <button>Télécharger</button>
-    <div class="infos-participants">
-      <h4>Ornella ANTONY</h4>
-      <h4>Gaspard CALAIS</h4>
-    </div>
-    <img src="images/vertviolet.webp" alt="Bannière">
+<div class="infos">
+  <h3>Samedi 12 Septembre 2026</h3>
+  <h3>Fête de l'Humanité • Base 217, le Plessy-Paté</h3>
+  <h2>Anarchive 2605201558</h2>
+  <p>Durée d'enregistrement : <strong>00:00:45</strong></p>
+  <button class="btn-partager">Partager</button>
+  <button>Télécharger</button>
+  <div class="infos-participants">
+    <h4>Ornella ANTONY</h4>
+    <h4>Gaspard CALAIS</h4>
   </div>
+  <img src="images/vertviolet.webp" alt="Bannière">
+</div>
 
 <!-------------------------------------------------------------
                           SOURCES         
@@ -120,10 +118,12 @@
   <div class="grille-videos">
 
     <div class="vignette">
-      <img src="images/rosevert.webp" alt="">
-      <span class="annee">1965</span>
-      <p class="titre">Fête de l'Humanité</p>
-      <p class="duree">00:03:42</p>
+      <a href="https://www.cinearchives.org/catalogue-fete-de-garches-la-1104-100-1-1.html" target="_blank" rel="noopener noreferrer">
+        <img src="images/Temp.webp" alt="Fête de l'Humanité">
+        <span class="annee">1965</span>
+        <p class="titre">Fête de l'Humanité</p>
+        <p class="duree">00:03:42</p>
+      </a>
     </div>
 
     <div class="vignette">
@@ -164,6 +164,26 @@
   </div>
 </section>
 
-</body>
+<!-------------------------------------------------------------
+                        BOUTON PARTAGER         
+-------------------------------------------------------------->
+<script>
+  document.querySelectorAll('.btn-partager').forEach(btn => {
+    btn.addEventListener('click', () => {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Lien copié !';
+        btn.style.backgroundColor = '#9583FF';
+        btn.style.color = '#ffffff';
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.style.backgroundColor = '';
+          btn.style.color = '';
+        }, 2000);
+      });
+    });
+  });
+</script>
 
+</body>
 </html>
