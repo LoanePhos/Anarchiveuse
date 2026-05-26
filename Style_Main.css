@@ -233,7 +233,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 
 .popup-mouche {
   width: clamp(200px, 24vw, 550px);
-  height: clamp(300px, 66vh, 600px);
+  height: clamp(300px, 66vh, 700px);
   top: clamp(4%, 2%, 4%);
   right: clamp(2%, 4%, 6%);
 }
