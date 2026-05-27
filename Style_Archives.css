@@ -84,7 +84,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(100px, 10vw, 200px);        
+  width: clamp(100px, 14vw, 200px);        
   text-align: center; 
   font-family: 'BianzhidaiPearl', sans-serif; 
   rotate: random;
@@ -152,7 +152,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 
 .grille-videos {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.8rem;
   padding: 0.8rem;
   justify-items: start;
@@ -184,15 +184,19 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+  color: #463838;
   font-family: 'Garabosse', sans-serif;
-  -webkit-text-stroke: 4px #B6F772;
+  -webkit-text-stroke: 4px #ffffff;
+  font-size: clamp(16px, 2vw, 26px);
   paint-order: stroke fill;
 }
 
 .vignette .titre {
-  font-family: 'BianzhidaiPearl', sans-serif;
-  background-color: #463838;
-  color: #B6F772;
+  font-family: 'BianzhidaiCloud', sans-serif;
+  color: #463838;
+  -webkit-text-stroke: 6px #B6F772;
+  paint-order: stroke fill;
+  font-size: clamp(16px, 2vw, 26px);
   padding: 0.2rem 0.4rem;
 }
 
@@ -251,19 +255,20 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 }
 
 .infos button {
-  font-family: 'BianzhidaiPearl', sans-serif;
-  font-size: clamp(12px, 2vw, 14px);
-  color: #9583FF;
-  background-color: #ffffff;
-  border: 3.6px dotted #9583FF;
+  font-family: 'BianzhidaiCloud', sans-serif;
+  font-weight: normal;
+  font-size: clamp(14px, 3vh, 20px);
+  color: #463838;
+  background-color: #B6F772;
+  box-shadow: 4px 4px 4px 0px #E967DB;
   padding: 0.5rem 1.2rem;
-  cursor: url('images/cursor.png'), auto;
   margin-right: 0.5rem;
   margin-bottom: 1.5rem;
+  border: none;
 }
 
 .infos button:hover {
-  background-color: #9583FF;
+  background-color: #95D8EF;
   color: #ffffff;
 }
 
@@ -279,7 +284,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   font-size: clamp(13px, 1.5vw, 20px);
   font-weight: bold;
   color: #ffffff;
-  background-color: #95D8EF;
+  background-color: #7562C7;
   line-height: 1.4;
   padding: 0.5rem 0.8rem;
   margin-top: 0.8rem;
@@ -310,38 +315,23 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 
 @media (max-width: 1200px) {
   .grille-videos { grid-template-columns: repeat(4, 1fr); }
-}
 
-@media (max-width: 1024px) {
   .video-wrapper { height: 60vh; }
 }
 
 @media (max-width: 900px) {
   .grille-videos { grid-template-columns: repeat(3, 1fr); }
-}
 
-@media (max-width: 800px) {
   .video-wrapper {
-    height: 40vh !important;
-    max-height: 40vh !important;
+    height: 28vh !important;
+    max-height: 28vh !important;
   }
 }
 
 @media (max-width: 768px) {
 
-  .topnav {
-    width: 95vw;
-    max-width: 95vw;
-    flex-wrap: wrap;
-    height: auto;
-    padding: 0.4rem 0.5rem;
-    gap: 0.3rem;
-  }
-
-  .nav-item > a {
-    width: auto;
-    padding: 0.3rem 0.5rem;
-    font-size: clamp(9px, 3vw, 14px);
+  .body{
+    width: 94vw;
   }
 
   .infos { padding: 1.2rem; }
@@ -376,12 +366,11 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   .video-grid h3 { font-size: clamp(15px, 5vw, 22px); }
 
   .grille-videos { grid-template-columns: repeat(2, 1fr); }
-}
 
-@media (max-width: 480px) {
   .video-wrapper {
     height: 20vh !important;
     max-height: 25vh !important;
   }
   .grille-videos { grid-template-columns: repeat(2, 1fr); }
+
 }

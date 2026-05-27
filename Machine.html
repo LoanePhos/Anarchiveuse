@@ -24,12 +24,10 @@
   let lastX = -9999, lastY = -9999;
 
   function createTrace(x, y) {
-    // Décalage aléatoire autour du point
-    const offsetX = (Math.random() - 0.5) * 40; // ±10px
-    const offsetY = (Math.random() - 0.5) * 40; // ±10px
+    const offsetX = (Math.random() - 0.5) * 40;
+    const offsetY = (Math.random() - 0.5) * 40;
     const rotation = Math.floor(Math.random() * 360);
 
-    // Alterner les images dans l'ordre
     const src = IMAGES[imageIndex % IMAGES.length];
     imageIndex++;
 
@@ -90,7 +88,8 @@
 <section class="layout-grid">
 
   <div class="bloc-texte bloc-titre-texte">
-    <h2>L'Anarchiveuse, <br><strong>une machine à VJing</strong> </h2>
+    <h2>L'Anarchiveuse est <br><strong>une machine à VJing</strong> </h2>
+    <br>
     <h3>Elle transforme la participation des spectateur.ices en gestes narratifs.</h3>
   </div>
   <div class="bloc-img bloc-titre-img">
@@ -127,46 +126,72 @@
                           CARTE         
 -------------------------------------------------------------->
   <div class="carte">
-    <h2>L'Anarchiveuse est une machine itinérante</h2>
-    <div class ="lieu1">
-        <h4>École Estienne</h4> 
-        <p>Juin 2026</p>
+    <div class="carte-texte">
+      <h2>L'Anarchiveuse est une machine itinérante</h2>
+      <h3>Les images circulent entre <strong>lieux d'ancrage</strong> et <span class="highlight">lieux de médiation artistique</span>.</h3>
     </div>
-    <div class ="lieu2">
+
+  <div class="carte-lieux">
+    <div class="lieu1 lieu-mediation">
+      <div class="lieu-content">
+        <h4>École Estienne</h4>
+        <p>Juin 2026</p>
+      </div>
+    </div>
+    <div class="lieu2 lieu-ancrage">
+      <div class="lieu-content">
         <h4>Biennale De Renava</h4>
         <p>Juillet 2026</p>
+      </div>
     </div>
-    <div class ="lieu3">
+    <div class="lieu3 lieu-mediation">
+      <div class="lieu-content">
         <h4>FestiLumi Bonifacio</h4>
         <p>Juillet 2026</p>
+      </div>
     </div>
-    <div class ="lieu4">
+    <div class="lieu4 lieu-ancrage">
+      <div class="lieu-content">
         <h4>91<sup>e</sup>Naurouze</h4>
         <p>Août 2026</p>
+      </div>
     </div>
-    <div class ="lieu5">
+    <div class="lieu5 lieu-ancrage">
+      <div class="lieu-content">
         <h4>91<sup>e</sup> Fête de l'Humanité</h4>
         <p>Sept. 2026</p>
+      </div>
     </div>
-    <div class ="lieu6">
-        <h4>Abbaye Royale de Fontevraud</h4> 
+    <div class="lieu6 lieu-mediation">
+      <div class="lieu-content">
+        <h4>Abbaye Royale de Fontevraud</h4>
         <p>Oct. 2027</p>
+      </div>
     </div>
-    <div class ="lieu7">
-        <h4>Château de Dampierre-Morains</h4> 
+    <div class="lieu7 lieu-mediation">
+      <div class="lieu-content">
+        <h4>Château de Dampierre-Morains</h4>
         <p>Nov. 2026</p>
+      </div>
     </div>
-    <div class ="lieu8">
-        <h4>Fête des Lumières de Lyon</h4> 
+    <div class="lieu8 lieu-mediation">
+      <div class="lieu-content">
+        <h4>Fête des Lumières de Lyon</h4>
         <p>Déc. 2026</p>
+      </div>
     </div>
-    <div class ="lieu9">
-        <h4>Biennale des Imaginaires Numériques</h4> 
+    <div class="lieu9 lieu-ancrage">
+      <div class="lieu-content">
+        <h4>Biennale des Imaginaires Numériques</h4>
         <p>Janv. 2027</p>
+      </div>
     </div>
-    <div class ="lieu10">
-        <h4>Museumsportal Berlin</h4> 
+    <div class="lieu10 lieu-ancrage">
+      <div class="lieu-content">
+        <h4>Museumsportal Berlin</h4>
         <p>Fév. 2027</p>
+      </div>
+      </div>
     </div>
   </div>  
 

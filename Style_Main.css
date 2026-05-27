@@ -84,7 +84,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(100px, 10vw, 200px);        
+  width: clamp(100px, 14vw, 200px);        
   text-align: center; 
   font-family: 'BianzhidaiPearl', sans-serif; 
   rotate: random;
@@ -147,6 +147,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   width: 100%;
+  background-image: url(images/Fond_Galerie.webp);
 }
 
 .grille a {
@@ -161,11 +162,12 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   height: 100%;
   object-fit: cover; 
   display: block;
-  transition: filter 0.4s ease;
+  transition: filter 1s ease;
+  mix-blend-mode:color-burn;
 }
 
 .grille a:hover img {
-  filter: saturate(4) brightness(0.8);
+  mix-blend-mode:normal;
 }
 
 .grille a .overlay {
@@ -178,7 +180,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   text-align: center;
   padding: 20px;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 1s ease;
 }
 
 .grille a:hover .overlay {
@@ -229,6 +231,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   height: clamp(240px, 66vh, 700px);
   top: clamp(6%, 24%, 28%);
   left: clamp(1rem, 5%, 6%);
+  aspect-ratio: 24/66;
 }
 
 .popup-mouche {
@@ -236,6 +239,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   height: clamp(300px, 66vh, 700px);
   top: clamp(4%, 2%, 4%);
   right: clamp(2%, 4%, 6%);
+  aspect-ratio: 24/66;
 }
 
 .popup-box h2 {

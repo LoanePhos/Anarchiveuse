@@ -84,7 +84,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(100px, 10vw, 200px);        
+  width: clamp(100px, 14vw, 200px);        
   text-align: center; 
   font-family: 'BianzhidaiPearl', sans-serif; 
   rotate: random;
@@ -126,18 +126,20 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   height: 94vh;
   display: flex;
   justify-content: center;
-  padding-top: 80vh;
+  align-items: flex-end;
+  padding-bottom: 4vh;
+  
 }
 
 .tagline {
   font-family: 'Garabosse', sans-serif;
-  font-size: clamp(26px, 2vw, 36px);
+  font-size: clamp(14px, 2vw, 36px);
   text-align: center;
   color: #000000;
   line-height: 1.5;
-  max-width: 80vw;
   -webkit-text-stroke: 6px #95D8EF;
   paint-order: stroke fill;
+  width: 94vw;
 }
 
 /* ============================================================
@@ -206,7 +208,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 
 .section-video img {
   width: 100%;
-  height: clamp(110vh, 130vh, 160vh);
+  height: clamp(120vh, 140vh, 180vh);
   object-fit: cover;
   display: block;
 }
@@ -256,14 +258,12 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   font-weight: normal;
   font-size: clamp(26px, 3vw, 48px);
   background-color: #95D8EF;
-  margin-bottom: 2rem;
 }
 
 .video-wrapper {
-  width: 80%;
+  width: 90%;
   aspect-ratio: 16 / 9;
-  margin: 0 auto;
-  padding-bottom: 10%;
+  margin: 4%;
 }
 
 .video-wrapper iframe {
@@ -287,9 +287,8 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   font-weight: normal;
   font-size: clamp(20px, 2.5vw, 30px);
   background-color: #9583FF;
-  padding: 0.2em 0.5em;
-  margin-bottom: clamp(1.5rem, 3vw, 3rem);
-  letter-spacing: 0.02em;
+  padding: 1vh;
+  margin-bottom: 2vh;
 }
 
 .carousel-outer {
@@ -476,18 +475,8 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 ============================================================ */
 
 @media (max-width: 768px) {
-  .topnav {
-    max-width: 95vw;
-    flex-wrap: wrap;
-    height: auto;
-    padding: 0.4rem 0.5rem;
-    gap: 0.3rem;
-  }
-
-  .nav-item > a {
-    width: auto;
-    padding: 0.3rem 0.5rem;
-    font-size: clamp(9px, 3vw, 14px);
+  .body {
+    width: 94vw;
   }
 
   .bloc-titre-img {
@@ -509,8 +498,9 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   .banner {
     background-image: url('images/Header_Mouche_mobile.webp');
     background-size: cover;
-    background-position: center top;
-    height: 40vh;
+    background-position: center bottom;
+    height: 30vh;
+    aspect-ratio: 7/8;
   }
 
   .section-video {
@@ -524,7 +514,6 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   .section-content {
     position: static;
     transform: none;
-    width: 95%;
     margin: 0 auto;
     padding: 2rem 0;
   }
@@ -540,44 +529,24 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   }
 
   .carousel-slide img {
-    height: 260px;
+    height: 40vh;
+  }
+  .carousel-title {
+    width: 94vw;
   }
 
   .text-block, .text-block p, .section-text, .section-text p, .tagline, .footer-block, .footer-block p {
     text-align: justify;
   }  
-}
 
-@media (max-width: 900px) {
-  .carousel-window {
-    width: 92%;
-  }
-
-  .carousel-slide {
-    flex: 0 0 calc(50% - 0.75rem);
-  }
-}
-
-@media (max-width: 600px) {
   .text-block {
     margin: 0.5rem;
-  }
-
-  .video-wrapper {
-    width: calc(100% - 1rem);
-  }
-
-  .carousel-window {
-    width: 90%;
   }
 
   .carousel-slide {
     flex: 0 0 calc(100% - 0.75rem);
   }
 
-  .carousel-slide img {
-    height: 220px;
-  }
 
   .carousel-btn {
     padding: 0 0.5rem;

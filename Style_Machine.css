@@ -7,11 +7,6 @@
   box-sizing: border-box;
 }
 
-@keyframes rotateIn {
-  0%   { transform: rotate(-10deg); opacity: 0; }
-  100% { transform: rotate(0deg);    opacity: 1; }
-}
-
 html, body {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -89,7 +84,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(100px, 10vw, 200px);        
+  width: clamp(100px, 14vw, 200px);        
   text-align: center; 
   font-family: 'BianzhidaiPearl', sans-serif; 
   rotate: random;
@@ -128,11 +123,6 @@ body {
   background-size: cover;
   animation: fadeIn 0.6s ease;
   cursor: url('images/cursor.png'), auto;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
 }
 
 .layout-grid {
@@ -200,7 +190,7 @@ body {
 .bloc-texte h3 {
   font-family: 'BianzhidaiPearl', sans-serif;
   font-weight: bold;
-  font-size: clamp(16px, 1.5vw, 28px);
+  font-size: clamp(20px, 2vw, 28px);
   color: #000000;
   line-height: 1.5;
   -webkit-text-stroke: 6px #95D8EF;
@@ -245,10 +235,35 @@ body {
   position: relative;
 }
 
+.carte-texte {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 0 2vw;
+}
+
+.carte-lieux {
+  position: absolute;
+  inset: 0;
+}
+
 .carte h2 {
-  font-family: 'BianzhidaiPearl', sans-serif;
+  font-family: 'BianzhidaiCloud', sans-serif;
   font-weight: normal;
-  font-size: clamp(22px, 2.5vw, 42px);
+  font-size: clamp(22px, 2.5vw, 46px);
+  color: #000000;
+  line-height: 1.2;
+  -webkit-text-stroke: 6px #95D8EF;
+  paint-order: stroke fill;
+  margin-top: 6vh;
+}
+
+.carte h3 {
+  font-family: 'Garabosse', sans-serif;
+  font-weight: normal;
+  font-size: clamp(18px, 1.5vw, 32px);
   color: #000000;
   line-height: 1.2;
   -webkit-text-stroke: 6px #95D8EF;
@@ -264,6 +279,22 @@ body {
   margin-bottom: 0.5rem;
   -webkit-text-stroke: 6px #463838;
   paint-order: stroke fill;
+}
+
+.carte strong {
+  font-family: 'BianzhidaiCloud', sans-serif;
+  font-weight: normal;
+  background-color: #95D8EF;
+  -webkit-text-stroke: 0;
+  box-shadow: 4px 4px 4px 0px #E967DB;
+}
+
+.carte .highlight {
+  font-family: 'BianzhidaiCloud', sans-serif;
+  font-weight: normal;
+  background-color: #95D8EF;
+  -webkit-text-stroke: 0;
+  box-shadow: 4px 4px 4px 0px #B6F772;
 }
 
 .carte p {
@@ -292,11 +323,7 @@ body {
 .lieu6, .lieu7, .lieu8, .lieu9, .lieu10 {
   height: 8%;
   aspect-ratio: 1 / 1;
-  background-image: url(images/fonds_carte.webp);
   transform: translate(-50%, -50%);
-  background-size: cover;
-  background-position: center top;
-  border: 4px dotted #463838;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -305,6 +332,32 @@ body {
   position: absolute;
   overflow: visible;
   padding-bottom: 0.5rem;
+}
+
+.lieu-ancrage::before,
+.lieu-mediation::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+.lieu-ancrage::before {
+  background-image: url(images/fonds_carte.webp);
+  box-shadow: 4px 4px 4px 0px #E967DB;
+}
+
+.lieu-mediation::before {
+  background-image: url(images/bleu_violet_.webp);
+  box-shadow: 4px 4px 4px 0px #B6F772;
+}
+
+.lieu-content {
+  position: relative;
+  z-index: 1;
 }
 
 /* ============================================================
@@ -369,35 +422,60 @@ body {
 ============================================================ */
 
 @media (max-width: 768px) {
+
   .carte {
     width: 98%;
-    aspect-ratio: 11 / 16;
+    aspect-ratio: unset;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .carte-texte {
+    position: relative;
+    z-index: 2;
+    padding: 4vw;
+    padding-top: 8vh;
+  }
+
+  .carte-lieux {
+    position: relative;
+    inset: unset;
+    width: 100%;
+    aspect-ratio: 2 / 3;
   }
 
   .carte h2 {
     font-size: clamp(14px, 4vw, 22px);
-    padding: 4vw;
+    margin-top: 0;
+  }
+
+  .carte h3 {
+    font-size: clamp(11px, 3vw, 16px);
   }
 
   .carte h4 {
-    font-size: clamp(10px, 2.5vw, 14px);
+    font-size: clamp(7px, 2vw, 11px);
+    margin-bottom: 0.2rem;
   }
 
   .carte p {
-    font-size: clamp(8px, 2vw, 11px);
+    font-size: clamp(6px, 1.6vw, 9px);
+    margin-bottom: 0;
   }
 
   .lieu1, .lieu2, .lieu3, .lieu4, .lieu5,
   .lieu6, .lieu7, .lieu8, .lieu9, .lieu10 {
-    width: 16%;
-    height: auto;
+    height: 11%;
     aspect-ratio: 1 / 1;
-    border-width: 2px;
-    padding-bottom: 0.2rem;
+    padding-bottom: 0.15rem;
   }
-}
 
-@media (max-width: 768px) {
+  .lieu4 { left: 78%; }
+  .lieu8 { left: 74%; }
+  
   .layout-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -435,7 +513,7 @@ body {
   }
 
   .bloc-texte h3 {
-    font-size: clamp(14px, 4vw, 22px);
+    font-size: clamp(18px, 4vw, 24px);
   }
 
   .bloc-texte p {
