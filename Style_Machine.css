@@ -180,7 +180,7 @@ body {
 .bloc-texte h2 {
   font-family: 'Garabosse', sans-serif;
   font-weight: normal;
-  font-size: clamp(28px, 2.5vw, 42px);
+  font-size: clamp(24px, 2.5vw, 35px);
   color: #000000;
   line-height: 1.2;
   -webkit-text-stroke: 6px #95D8EF;
@@ -190,7 +190,7 @@ body {
 .bloc-texte h3 {
   font-family: 'BianzhidaiPearl', sans-serif;
   font-weight: bold;
-  font-size: clamp(20px, 2vw, 28px);
+  font-size: clamp(14px, 1.5vw, 24px);
   color: #000000;
   line-height: 1.5;
   -webkit-text-stroke: 6px #95D8EF;
@@ -200,7 +200,7 @@ body {
 .bloc-texte p {
   font-family: 'Garabosse', sans-serif;
   font-weight: bold;
-  font-size: clamp(14px, 1.2vw, 22px);
+  font-size: clamp(20px, 1.8vw, 33px);
   color: #000000;
   line-height: 1.7;
   -webkit-text-stroke: 6px #B6F772;
@@ -252,7 +252,7 @@ body {
 .carte h2 {
   font-family: 'BianzhidaiCloud', sans-serif;
   font-weight: normal;
-  font-size: clamp(22px, 2.5vw, 46px);
+  font-size: clamp(24px, 2.5vw, 35px);
   color: #000000;
   line-height: 1.2;
   -webkit-text-stroke: 6px #95D8EF;
@@ -263,7 +263,7 @@ body {
 .carte h3 {
   font-family: 'Garabosse', sans-serif;
   font-weight: normal;
-  font-size: clamp(18px, 1.5vw, 32px);
+  font-size: clamp(14px, 1.5vw, 24px);
   color: #000000;
   line-height: 1.2;
   -webkit-text-stroke: 6px #95D8EF;
@@ -274,7 +274,7 @@ body {
   font-family: 'Garabosse', sans-serif;
   font-weight: bold;
   text-align: center;
-  font-size: clamp(14px, 1.2vw, 20px);
+  font-size: clamp(7px, 2vw, 11px);
   color: #ffffff;
   margin-bottom: 0.5rem;
   -webkit-text-stroke: 6px #463838;
@@ -448,12 +448,12 @@ body {
   }
 
   .carte h2 {
-    font-size: clamp(14px, 4vw, 22px);
+    font-size: clamp(24px, 2.5vw, 35px);
     margin-top: 0;
   }
 
   .carte h3 {
-    font-size: clamp(11px, 3vw, 16px);
+    font-size: clamp(14px, 1.5vw, 24px);
   }
 
   .carte h4 {
@@ -509,14 +509,14 @@ body {
   }
 
   .bloc-texte h2 {
-    font-size: clamp(22px, 6vw, 32px);
+    font-size: clamp(24px, 2.5vw, 35px);
   }
 
   .bloc-texte h3 {
-    font-size: clamp(18px, 4vw, 24px);
+    font-size: clamp(14px, 1.5vw, 24px);
   }
 
   .bloc-texte p {
-    font-size: clamp(13px, 3.5vw, 18px);
+    font-size: clamp(20px, 1.8vw, 33px);
   }
 }

@@ -242,12 +242,6 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   aspect-ratio: 24/66;
 }
 
-.popup-box h2 {
-  font-family: 'BianzhidaiPearl', sans-serif;
-  font-size: clamp(14px, 2.2vw, 28px);
-  color: #463838;
-  margin-bottom: 1rem;
-}
 
 .popup-box img {
   width: 100%;
@@ -270,7 +264,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 
 .popup-box p {
   font-family: 'Garabosse', sans-serif;
-  font-size: clamp(10px, 1vw, 16px);
+  font-size: clamp(11px, 1vw, 16px);
   color: #000000;
   -webkit-text-stroke: 6px #95D8EF;
   paint-order: stroke fill;
@@ -285,7 +279,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   font-family: 'BianzhidaiPearl', sans-serif;
   color: #000000;
   text-decoration: none;
-  font-size: clamp(10px, 1.2vw, 14px);
+  font-size: clamp(10px, 1.8vw, 16px);
 }
 
 .popup-machine-lien,
@@ -295,7 +289,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   text-align: center;
   margin: 1rem auto;
   font-family: 'BianzhidaiPearl', sans-serif;
-  font-size: clamp(10px, 1.2vw, 14px);
+  font-size: clamp(10px, 1.8vw, 16px);
   color: #463838;
   text-decoration: none;
   background-color: #B6F772;
@@ -309,7 +303,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 .popup-mouche-lien::after {
   content: attr(data-text);
   font-family: 'BianzhidaiMessy', sans-serif;
-  font-size: clamp(8px, 1vw, 12px);
+  font-size: clamp(10px, 1.8vw, 16px);
   position: absolute;
   inset: 0;
   display: flex;
