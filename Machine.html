@@ -83,44 +83,184 @@
 </header>
 
 <!-------------------------------------------------------------
-                          GRILLE        
+                          TEXTE        
 -------------------------------------------------------------->
-<section class="layout-grid">
 
-  <div class="bloc-texte bloc-titre-texte">
-    <h2>L'Anarchiveuse est <br><strong>une machine à VJing</strong> </h2>
+  <div class="bloc-texte">
+    <h2>L'Anarchiveuse est <br><strong>une machine à VJing</strong> </hs2>
     <br>
-    <h3>Elle transforme la participation des spectateur.ices en gestes narratifs.</h3>
-  </div>
-  <div class="bloc-img bloc-titre-img">
-    <img src="images/logo_mouche_lettres.webp" alt="">
-  </div>
-
-  <div class="bloc-texte bloc-1">
+    <h2><span class="highlight">Elle transforme la participation des spectateur.ices en gestes narratifs.</span></h2>
+    <div class="banner"><img src="images/Anarchiveuse_1.jpg"></div>
     <p>Équipé de commandes mécaniques et numériques, le véhicule anarchivique déplace notre rapport à la narration : il fait émerger des formes de récits organiques, fragmentés, non linéaires.</p>
-  </div>
-  <div class="bloc-img bloc-2">
-    <img src="images/Temp.webp" alt="">
+
+<!-------------------------------------------------------------
+                          CARROUSEL         
+-------------------------------------------------------------->
+  <section class="carousel-section">
+       <div class="carousel-outer">
+      <button class="carousel-btn" id="prev-btn"></button>
+      <div class="carousel-window">
+        <div class="carousel-track" id="carousel-track">
+          <div class="carousel-slide">
+            <img src="images/Anarchiveuse_1.jpg" alt="Image 01" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/Anarchiveuse_1.jpg" alt="Image 02" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/Anarchiveuse_1.jpg" alt="Image 03" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/Anarchiveuse_1.jpg" alt="Image 01" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/Anarchiveuse_1.jpg" alt="Image 02" />
+          </div>
+          <div class="carousel-slide">
+            <img src="images/Anarchiveuse_1.jpg" alt="Image 03" />
+          </div>
+        </div>
+      </div>
+        <button class="carousel-btn" id="next-btn">></button>
+      </div>
+    </section>
+
+    <p>À travers des mécaniques de montage complexe rendues accessibles et performatives, l'anarchiveuse propose d'explorer, de manipuler, de superposer, de ralentir, de décaler, d'accidenter des images-archives et de réactiver leur visionnage passé et actuel. Installée dans des lieux passants, l'anarchiveuse invite à l'exploration et au jeu audiovisuels entre archives, technologies et public.</p>
   </div>
 
-  <div class="bloc-img bloc-3">
-    <img src="images/Temp.webp" alt="">
-  </div>
-  <div class="bloc-texte bloc-4">
-    <p>À travers des mécaniques de montage complexe rendues accessibles et performatives, l'anarchiveuse propose d'explorer, de manipuler, de superposer, de ralentir, de décaler, d'accidenter des images-archives et de réactiver leur visionnage passé et actuel.</p>
-  </div>
-  <div class="bloc-img bloc-5">
-    <img src="images/Temp.webp" alt="">
-  </div>
-
-  <div class="bloc-img bloc-6">
-    <img src="images/Temp.webp" alt="">
-  </div>
-  <div class="bloc-texte bloc-7">
-    <p>Installée dans des lieux passants, l'anarchiveuse invite à l'exploration et au jeu audiovisuels entre archives, technologies et public.</p>
+  <!-------------------------------------------------------------
+                          LIGHTBOX         
+-------------------------------------------------------------->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">✕</button>
+    <button class="lightbox-nav" id="lightbox-prev">◀</button>
+    <img id="lightbox-img" src="" alt="" />
+    <button class="lightbox-nav" id="lightbox-next">▶</button>
   </div>
 
-</section>
+<!-------------------------------------------------------------
+                          SCRIPT         
+-------------------------------------------------------------->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    const track = document.getElementById('carousel-track');
+    const original = Array.from(track.querySelectorAll('.carousel-slide'));
+    const GAP = 24;
+    let current = original.length;
+    let isAnimating = false;
+
+    original.forEach(s => track.appendChild(s.cloneNode(true)));
+    original.forEach(s => track.insertBefore(s.cloneNode(true), track.firstChild));
+
+    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+
+    function getSlideWidth() {
+      return slides[0].offsetWidth + GAP;
+    }
+
+    function setPosition(animate) {
+      track.style.transition = animate ? 'transform 0.5s ease' : 'none';
+      track.style.transform = 'translateX(-' + (current * getSlideWidth()) + 'px)';
+      updateActiveSlide();
+    }
+
+    function getVisibleCount() {
+      const windowWidth = document.querySelector('.carousel-window').offsetWidth;
+      const slideWidth = slides[0].offsetWidth;
+      return Math.round(windowWidth / (slideWidth + GAP));
+    }
+
+    function updateActiveSlide() {
+      const visible = getVisibleCount();
+      const centerOffset = Math.floor(visible / 2);
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === current + centerOffset);
+      });
+    }
+
+    setTimeout(() => setPosition(false), 50);
+
+    function goTo(index) {
+      if (isAnimating) return;
+      isAnimating = true;
+      current = index;
+      setPosition(true);
+    }
+
+    track.addEventListener('transitionend', () => {
+      isAnimating = false;
+      const total = slides.length;
+      if (current >= total - original.length) {
+        current = original.length;
+        setPosition(false);
+      } else if (current < original.length) {
+        current = total - original.length * 2;
+        setPosition(false);
+      }
+    });
+
+    document.getElementById('next-btn').addEventListener('click', () => goTo(current + 1));
+    document.getElementById('prev-btn').addEventListener('click', () => goTo(current - 1));
+    setInterval(() => goTo(current + 1), 4500);
+
+    // ── Lightbox ──────────────────────────────────────────────
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const images = original.map(s => ({
+      src: s.querySelector('img') ? s.querySelector('img').src : '',
+      alt: s.querySelector('img') ? s.querySelector('img').alt : ''
+    }));
+    let lightboxIndex = 0;
+
+    function openLightbox(index) {
+      lightboxIndex = index;
+      lightboxImg.src = images[lightboxIndex].src;
+      lightboxImg.alt = images[lightboxIndex].alt;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function lightboxNav(dir) {
+      lightboxIndex = (lightboxIndex + dir + images.length) % images.length;
+      lightboxImg.src = images[lightboxIndex].src;
+      lightboxImg.alt = images[lightboxIndex].alt;
+    }
+
+    track.addEventListener('click', function(e) {
+      const slide = e.target.closest('.carousel-slide');
+      if (!slide) return;
+      const img = slide.querySelector('img');
+      if (!img) return;
+      const idx = original.findIndex(s => {
+        const si = s.querySelector('img');
+        return si && si.src === img.src;
+      });
+      openLightbox(idx >= 0 ? idx : 0);
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-prev').addEventListener('click', () => lightboxNav(-1));
+    document.getElementById('lightbox-next').addEventListener('click', () => lightboxNav(1));
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'ArrowLeft') lightboxNav(-1);
+      if (e.key === 'ArrowRight') lightboxNav(1);
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+  });
+  </script>
 
 <!-------------------------------------------------------------
                           CARTE         
@@ -168,7 +308,7 @@
         <p>Oct. 2027</p>
       </div>
     </div>
-    <div class="lieu7 lieu-mediation">
+    <div class="lieu7 lieu-ancrage">
       <div class="lieu-content">
         <h4>Château de Dampierre-Morains</h4>
         <p>Nov. 2026</p>

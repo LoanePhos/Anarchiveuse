@@ -281,7 +281,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 
 .infos h4 {
   font-family: 'BianzhidaiPearl', sans-serif;
-  font-size: clamp(7px, 2vw, 11px);
+  font-size: clamp(12px, 2vw, 16px);
   font-weight: bold;
   color: #ffffff;
   background-color: #7562C7;
