@@ -211,6 +211,31 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
                         INFORMATIONS
 ============================================================ */
 
+.audio {
+  position: relative;
+  padding: 2rem;
+}
+
+.audio h3 {
+  font-family: 'Garabosse', sans-serif;
+  font-size: clamp(14px, 1.5vw, 24px);
+  font-weight: bold;
+  color: #463838;
+  -webkit-text-stroke: 4px #B6F772;
+  paint-order: stroke fill;
+  margin-bottom: 0.5rem;
+}
+
+.audio h2 {
+  font-family: 'BianzhidaiPearl', sans-serif;
+  font-size: clamp(14px, 1.5vw, 24px);
+  font-weight: bold;
+  background-color: #B6F772;
+  paint-order: stroke fill;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
 .infos {
   position: relative;
   padding: 2rem;
