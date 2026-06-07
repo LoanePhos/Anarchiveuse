@@ -256,8 +256,10 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
   display: inline-block;
   font-family: 'BianzhidaiCloud', sans-serif;
   font-weight: normal;
-  font-size: clamp(24px, 2.5vw, 35px);
+  font-size: clamp(24px, 2.5vw, 34px);
   background-color: #95D8EF;
+  padding: 1vh;
+  margin-bottom: 2vh;
 }
 
 .video-wrapper {
@@ -499,7 +501,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
     background-image: url('images/Header_Mouche_mobile.webp');
     background-size: cover;
     background-position: center bottom;
-    height: 30vh;
+    height: 40vh;
     aspect-ratio: 7/8;
   }
 

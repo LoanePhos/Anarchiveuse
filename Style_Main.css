@@ -259,7 +259,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 }
 
 .popup-machine img:first-of-type {
-  width: 50%;
+  width: 80%;
 }
 
 .popup-box p {
@@ -303,7 +303,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"], input[ty
 .popup-mouche-lien::after {
   content: attr(data-text);
   font-family: 'BianzhidaiMessy', sans-serif;
-  font-size: clamp(10px, 1.8vw, 16px);
+  font-size: clamp(8px, 1.4vw, 14px);
   position: absolute;
   inset: 0;
   display: flex;
